@@ -1,6 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
-const course = require('../models');
+// const course = require('../models');
 module.exports = (sequelize, DataTypes) => {
   class student extends Model {
     /**
@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      student.hasMany(course);
+      student.hasMany(models.course, { as: 'student', foreignKey: 'std_id' });
+      student.hasOne(models.std_class, { as: 'student', foreignKey: 'std_id' });
     }
   }
   student.init(
