@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "admin",
-    "database": "student_registration_system",
+    "database": "student",
     "host": "localhost",
     "dialect": "postgres"
   },

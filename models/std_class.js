@@ -1,20 +1,16 @@
 'use strict';
 const { Model } = require('sequelize');
-// const student = require('../models');
 module.exports = (sequelize, DataTypes) => {
   class std_class extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      std_class.belongsTo(models.student, {
+      std_class.belongsTo(models.std_details, {
+        as: 'student_class_detail',
         foreignKey: 'id',
       });
-      std_class.hasMany(models.class_teacher, {
-        as: 'classes',
-        foreignKey: 'class_id',
+      std_class.belongsToMany(models.teacher, {
+        as: 'teacher',
+        through: 'teacher_class',
+        foreignKey: 'classId',
       });
     }
   }
