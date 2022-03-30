@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      std_details.hasOne(models.std_class, {
+      std_details.belongsTo(models.std_class, {
         as: 'student_class',
-        foreignKey: 'std_id',
+        foreignKey: 'classId',
       });
       std_details.hasMany(models.std_course, {
         as: 'student_course_detail',
@@ -20,10 +20,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   std_details.init(
     {
-      firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
-      contact_num: DataTypes.INTEGER,
-      email: DataTypes.STRING,
+      firstName: { type: DataTypes.STRING, allowNull: false },
+      lastName: { type: DataTypes.STRING, allowNull: false },
+      email: { type: DataTypes.STRING, allowNull: false },
+      contact_num: { type: DataTypes.INTEGER, allowNull: false },
+      classId: { type: DataTypes.INTEGER, allowNull: false },
     },
     {
       sequelize,

@@ -9,6 +9,7 @@ module.exports = {
           firstName: 'Muhammad',
           lastName: 'Ahmad',
           contact_num: 123456789,
+          classId: 1,
           email: 'test@gmail.com',
           createdAt: '2018-01-12',
           updatedAt: '2022-02-02',

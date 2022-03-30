@@ -9,9 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       class_name: {
+        allowNull: false,
         type: Sequelize.STRING,
       },
       std_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       createdAt: {

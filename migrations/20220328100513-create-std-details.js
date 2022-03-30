@@ -16,13 +16,17 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      email: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       contact_num: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      email: {
+      classId: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,

@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
 
   teacher_class.init(
     {
-      teacherId: DataTypes.INTEGER,
-      classId: DataTypes.INTEGER,
+      teacherId: { type: DataTypes.INTEGER, allowNull: false },
+      classId: { type: DataTypes.INTEGER, allowNull: false },
     },
     {
       sequelize,

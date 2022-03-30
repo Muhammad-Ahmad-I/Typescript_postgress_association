@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   std_course.init(
     {
-      course_name: DataTypes.STRING,
-      std_id: DataTypes.INTEGER,
+      course_name: { type: DataTypes.STRING, allowNull: false },
+      std_id: { type: DataTypes.INTEGER, allowNull: false },
     },
     {
       sequelize,
